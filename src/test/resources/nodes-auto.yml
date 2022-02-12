@@ -1,0 +1,120 @@
+- name: testNode1
+  domain: http://test-auto-n1.com/
+  adminUsername: admin
+  adminPassword: MPCplatform@123
+  isOwner: true
+  #  mysql:
+  #    host: 172.16.49.29
+  #    port: 3306
+  #    userName: root
+  #    password: qatest
+  #    databaseName: auto-test-node1
+  #  redis:
+  #    host: 172.16.66.229
+  #    port: 6379
+  datasets:
+    Y: /dataset/FixedData-Y-1400.csv
+    X: /dataset/FixedData-X1-1300.csv
+  databases:
+    - sourceType: mysql
+      host: 10.100.3.150
+      port: 3306
+      username: root
+      password: qatest@
+      DBName: qa
+  dataSources:
+    - sourceType: mysql
+      query: select * from fixed_x_1300
+      datatype: X
+    - sourceType: mysql
+      query: select * from fixed_y_1400
+      datatype: Y
+- name: testNode2
+  domain: http://test-auto-n2.com/
+  adminUsername: admin
+  adminPassword: MPCplatform@123
+  isOwner: false
+  #  mysql:
+  #    host: 172.16.49.29
+  #    port: 3306
+  #    userName: root
+  #    password: qatest
+  #    databaseName: auto-test-node2
+  #  redis:
+  #    host: 172.16.76.72
+  #    port: 6379
+  datasets:
+    Y: /dataset/FixedData-Y-1400.csv
+    X: /dataset/FixedData-X1-1300.csv
+  databases:
+    - sourceType: mysql
+      host: 10.100.3.150
+      port: 3306
+      username: root
+      password: qatest@
+      DBName: qa
+  dataSources:
+    - sourceType: mysql
+      query: select * from fixed_x_1300
+      datatype: X
+    - sourceType: mysql
+      query: select * from fixed_y_1400
+      datatype: Y
+- name: testNode3
+  domain: http://test-auto-n3.com/
+  adminUsername: admin
+  adminPassword: MPCplatform@123
+  isOwner: false
+  #  mysql:
+  #    host: 172.16.49.29
+  #    port: 3306
+  #    userName: root
+  #    password: qatest
+  #    databaseName: auto-test-node3
+  #  redis:
+  #    host: 172.16.67.59
+  #    port: 6379
+  datasets:
+    Y:
+    X: /dataset/FixedData-X2-1500.csv
+  databases:
+    - sourceType: mysql
+      host: 10.100.3.150
+      port: 3306
+      username: root
+      password: qatest@
+      DBName: qa
+  dataSources:
+    - sourceType: mysql
+      query: select * from fixed_x_1300
+      datatype: X
+- name: testNode4
+  domain: http://test-auto-n4.com/
+  adminUsername: admin
+  adminPassword: MPCplatform@123
+  isOwner: false
+  #  nodeID: 1
+  #  nid: 14nntxca12cpp
+  #  mysql:
+  #    host: 172.16.49.29
+  #    port: 3306
+  #    userName: root
+  #    password: qatest
+  #    databaseName: auto-test-node4
+  #  redis:
+  #    host: 172.16.87.29
+  #    port: 6379
+  datasets:
+    Y:
+    X: /dataset/FixedData-X2-1500.csv
+  databases:
+    - sourceType: mysql
+      host: 10.100.3.150
+      port: 3306
+      username: root
+      password: qatest@
+      DBName: qa
+  dataSources:
+    - sourceType: mysql
+      query: select * from fixed_x_1300
+      datatype: X

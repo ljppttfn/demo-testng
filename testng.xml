@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<!--suite（测试套件）为根路径，仅允许出现1次，是多个test（测试用例）的集合，以下为各属性含义及取值
+  @name 必填，标记suite的名称
+  @verbose 选填，命令行信息打印等级（与测报内容无关），可在测试代码注释中配置，可选值（1|2|3|4|5）
+  @parallel 选填，是否多线程并发运行测试，可选值(false | methods | tests | classes | instances)，默认 "false"
+  @thread-count 选填，填写值为正整数，当为并发执行时的线程池数量，默认为"5"
+  @time-out 为具体执行单元设定一个超时时间，具体参照parallel的执行单元设置；单位为毫秒
+  @data-provider-thread-count 并发执行时data-provider的线程池数量，默认为"10"
+    -->
+<suite name="autotest-suite" verbose="2" parallel="methods" thread-count="4" data-provider-thread-count="4">
+    <!--test定义一次测试执行，以下为各属性含义及取值
+        @name：必填，test的名字，测试报告中会有体现
+    -->
+    <test name="test1-test">
+        <parameter name="nodesPath" value="nodes-testEnv.yml"/>
+<!--        <packages>-->
+<!--            <package name="lj.study.test.tmp.*">-->
+<!--                <exclude name="lj.study.test.tmp.testng.*"/>-->
+<!--            </package>-->
+<!--        </packages>-->
+        <classes>
+            <class name="lj.study.test.tmp.thread.TestTestNGParallel"/>
+        </classes>
+    </test>
+
+
+    <!-- MPC基于TF底层框架，目前版本不支持集群化   -->
+    <test name="test2-pro">
+        <parameter name="nodesPath" value="nodes-proEnv.yml"/>
+        <classes>
+            <class name="lj.study.test.tmp.TestMath"/>
+            <class name="lj.study.test.tmp.TestString"/>
+        </classes>
+    </test>
+
+<!--    也可以通过设置group排除不想执行的类-->
+<!--    <test name="test1">-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <exclude name="group2"></exclude>-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--        <packages>-->
+<!--            <package name="lj.study.test.tmp.testng.*">-->
+<!--                <exclude name="lj.study.test.tmp.testng.t2.*"></exclude>-->
+<!--            </package>-->
+<!--        </packages>-->
+<!--    </test>-->
+</suite>
