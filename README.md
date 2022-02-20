@@ -8,9 +8,12 @@
 >1.官网： https://testng.org/doc/index.html
 
 ### 二、使用说明
-#### 1.所有测试类需要继承 BaseTestNG.class
+#### 1.自定义监听器
+如果需要自定义监听器，则在testng.xml中添加listeners配置。如下：
 ```
-public class ApplnfoManagerServiceImplTest extends BaseTestNG
+<listeners>
+        <listener class-name="lj.study.test.MyIMethodInterceptor"/>
+</listeners>
 ```
 #### 2. Dubbo类接入：
 

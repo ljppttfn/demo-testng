@@ -9,6 +9,9 @@
   @data-provider-thread-count 并发执行时data-provider的线程池数量，默认为"10"
     -->
 <suite name="autotest-suite" verbose="2" parallel="methods" thread-count="4" data-provider-thread-count="4">
+    <listeners>
+        <listener class-name="lj.study.test.MyIMethodInterceptor"/>
+    </listeners>
     <!--test定义一次测试执行，以下为各属性含义及取值
         @name：必填，test的名字，测试报告中会有体现
     -->
